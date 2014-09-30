@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>@yield('title', 'Health App Game')</title>
+	<title>@yield('title', 'HAG Admin Console')</title>
 	{{HTML::style('css/foundation.css', array('media' => 'screen')) }}
 	{{HTML::style('css/foundation-icons.css', array('media' => 'screen'))}}
 	{{HTML::style('css/health.css', array('media' => 'screen'))}}
@@ -16,54 +16,17 @@
 				<h1>
 					<a href="#"> 
 						<i class="fi-home"></i>
-						Health App
+						Health App - Admin
 					</a>
 				</h1>
 			</li>	
 		</ul>
-		<section class="top-bar-section">
-			<ul class="right">
-				@if (Auth::check())
-				 <li class="has-dropdown">
-			        <a href="#"><i class="fi-list-thumbnails"></i></a>
-			        <ul class="dropdown">
-						<li class="#">
-							<a href="{{ URL::route("user/profile") }}">
-							<i class="fi-torso"></i>
-				          	Mi perfil
-				        	</a>
-			 			</li>
-			 			<li class="active">
-			       	 		<a href="{{ URL::route("user/logout") }}">
-			          		<i class="fi-power"></i>
-			          		Salir
-			        		</a>
-						</li> 
-			        </ul>
-			     </li>
-				@else
-			    <li class="active">
-			        <a href="{{ URL::route("user/login") }}">
-			           <i class="fi-torso"></i>
-			          	Iniciar Sesión
-			        </a>
-			    </li>
-			 	@endif	
-			</ul>
-		</section>
 	</nav>
-	</div>
-	@if(Session::has('message'))
-		<div class="alert-box success">
-			{{{Session::get('message')}}}
-		</div>
-	@endif
 	<div class="row">
 		<div class="large-12">
 			@yield('content')
 		</div>
 	</div>
-
 	<footer class="row">
 		<div class="large-12 columns">
 			<hr/>
@@ -77,6 +40,7 @@
 	{{ HTML::script('js/vendor/jquery.js')}}
 	{{ HTML::script('js/foundation.min.js')}}
 	{{ HTML::script('js/app.js')}}
+	{{ HTML::script('js/admin.js') }}
 	<script>
 		$(document).foundation();
 	</script>

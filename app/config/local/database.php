@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			//'host'      => 'mysql.hostinger.es',
+			//'host'      => 'mysql.hostinger.es' mi puerto 33060 ,
 			'database'  => 'odot',
 			//'database'  => 'u948252164_test',
 			'username'  => 'homestead',

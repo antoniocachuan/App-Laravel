@@ -26,26 +26,55 @@
 
 
 //mapeo usuando el controller generado
-Route::get('/', 'TodoListController@index');
+
+//Route::get('/user/login', array('uses' => 'UserController@showLogin'));
+
+// route to process the form
+//Route::post('/user/login', array('uses' => 'UserController@doLogin'));
+
+
+
+Route::resource('user', 'UserController');
+
+Route::any('/profile', [
+  'as'   => 'user/profile',
+  'uses' => 'UserController@profile'
+]);
+Route::any('/logout', [
+  'as'   => 'user/logout',
+  'uses' => 'UserController@logout'
+]);
+Route::any("/", [
+ "as"   => "user/login",
+ "uses" => "UserController@login"
+]);
+
+Route::resource('admin/users','Admin_UsersController');
 
 //manera manual de generar rutas
-//Route::get('/todos', 'TodoListController@index');
+//Route::get('/user/login', 'UserController@index');
 //Route::get('/todos/{id}', 'TodoListController@show');
 
 //Forma dinamica de generar rutas
-Route::resource('todos', 'TodoListController');
+//Route::get('/', 'TodoListController@index');
+//Route::resource('todos', 'TodoListController');
 
+//Route::resource('todos.items', 'TodoItemController');
 
+//Route::resource('gamer', 'UserGameController');
+//Route::resource('user', 'UserController');
+
+//php artisan controller:make TodoListController
 //forma de probar que estamos conectados a una DB
 Route::get('/db', function(){
 	//return DB::select('select database();');
 	//return DB::select('show tables;'); mostrar las tablas
-	//return DB::table('todo_lists')->get();//mostar el contenido de una tabla
+	return DB::table('user')->get();//mostar el contenido de una tabla
 	//DB::table('todo_lists')->insert(
 	//	array('name' => 'Mi Lista')
 	//);
-	$result = DB::table('todo_lists')->where('name','martin')->first();
-	return $result->name;
+	//$result = DB::table('user')->where('username','antonio')->first();
+	//return $result->name;
 });
 
 /*Route::get('/todos', function()

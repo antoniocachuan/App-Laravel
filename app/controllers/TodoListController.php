@@ -16,7 +16,6 @@ class TodoListController extends \BaseController {
 		return View::make('todos.index')->with('todo_lists', $todo_lists);
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -42,9 +41,7 @@ class TodoListController extends \BaseController {
 			'name' => array('required', 'unique:todo_lists')
 
 		);
-		
 		$validator = Validator::make(Input::all(), $rules);
-
 		if($validator->fails()){
 			return Redirect::route('todos.create')->withErrors($validator)->withInput();
 		}

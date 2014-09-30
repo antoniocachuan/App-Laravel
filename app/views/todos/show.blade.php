@@ -6,5 +6,7 @@
 			<h4>{{{ $item->content }}}</h4>
 		@endforeach
 		<p> {{ link_to_route('todos.index', 'back')}}</p>
+		<h4> {{ link_to_route('todos.items.create', "Create new Item", [$list->id] ) }}</h4>
+		
 	</div>
 @stop
