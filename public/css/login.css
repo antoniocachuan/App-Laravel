@@ -1,0 +1,36 @@
+.linea {
+	border-bottom:1px #ccc solid;
+	padding-top: 10px;
+}
+
+.login-remote {
+	padding-top: 10px;
+}
+
+.texto-separador {
+	padding: 1px 24px;
+}
+
+.rojo {
+	background-color:#dd4b39;
+}
+
+.rojo:hover { 
+  background-color: #dd4000;
+}
+
+.celeste {
+	background-color:#2ba9e1;
+}
+
+.celeste:hover { 
+  background-color: #2ba9e0;
+}
+
+.azul {
+	background-color:#3b5998;
+}
+
+.azul:hover { 
+  background-color: #3b5990;
+}

@@ -36,6 +36,8 @@
 
 Route::resource('user', 'UserController');
 
+Route::resource('campaign', 'CampaignsController');
+
 Route::any('/profile', [
   'as'   => 'user/profile',
   'uses' => 'UserController@profile'
@@ -45,15 +47,32 @@ Route::any('/logout', [
   'uses' => 'UserController@logout'
 ]);
 Route::any("/", [
+ "as"   => "user/index",
+ "uses" => "UserController@index"
+]);
+
+Route::any("/login", [
  "as"   => "user/login",
  "uses" => "UserController@login"
 ]);
 
 Route::resource('admin/users','Admin_UsersController');
 
+Route::get('google', array('as' => 'google', 'uses' => 'UserController@loginWithGoogle'));
+
+Route::get('facebook', array('as' => 'facebook', 'uses' => 'UserController@loginWithFacebook'));
+
+Route::get('twitter', array('as' => 'twitter', 'uses' => 'UserController@loginWithTwitter'));
 //manera manual de generar rutas
 //Route::get('/user/login', 'UserController@index');
 //Route::get('/todos/{id}', 'TodoListController@show');
+
+/*
+Route::get("/path/{id}", function($id){
+	return View::make('campaigns.show')->withId($id);
+})->where('id', '[0-9]+');
+
+*/
 
 //Forma dinamica de generar rutas
 //Route::get('/', 'TodoListController@index');

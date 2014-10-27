@@ -1,3 +1,4 @@
+
 @extends ('admin.layout.layout')
 
 @section ('title') Crear Usuarios @stop
@@ -13,5 +14,5 @@
     @include('admin.partials._form')
   {{ Form::button('Crear usuario', array('type' => 'submit', 'class' => 'button success')) }}    
 {{ Form::close() }}
- </fieldset> 
+ </fieldset>
 @stop

@@ -1296,7 +1296,7 @@ meta.foundation-mq-topbar {
       .top-bar .name h1 a {
         font-weight: normal;
         color: white;
-        width: 75%;
+        width: 35%;
         display: block;
         padding: 0 15px; }
   .top-bar .toggle-topbar {
