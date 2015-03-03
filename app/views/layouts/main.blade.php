@@ -9,10 +9,11 @@
 	{{HTML::style('css/health.css', array('media' => 'screen'))}}
 	{{HTML::style('css/font-awesome.css', array('media' => 'screen')) }}
 	{{HTML::script('js/vendor/modernizr.js')}}
+
 </head>
 <body>
 	<div class="containt-to-grid sticky">
-		<nav class="top-bar" data-topbar role="navigation">
+		<nav class="top-bar main-bar" data-topbar role="navigation">
 			<ul class="title-area">
 				<li class="name">
 					<h1>
@@ -30,21 +31,21 @@
 			<section class="top-bar-section">
 				<ul class="right">
 					@if (Auth::check())    
-									<li class="#">
-										<a href="{{ URL::route("user/profile") }}">
+									<li>
+										<a href="{{ URL::route("user/profile") }}" class="pastel-profile">
 										<i class="fi-torso"></i>
 							          Mi perfil
 							       </a>
 						 			</li>
-						 			<li class="active">
-						       	 	<a href="{{ URL::route("user/logout") }}">
+						 			<li>
+						       	 	<a href="{{ URL::route("user/logout") }}" class="pastel-out">
 						          	<i class="fi-power"></i>
 						          	Salir
 						        	</a>
 									</li> 
 					@else
 				    <li class="active">
-				        <a href="{{ URL::route('user/login') }}" data-reveal-id="Signup" data-reveal-ajax="true">
+				        <a href="{{ URL::route('user/login') }}" data-reveal-id="Signup" data-reveal-ajax="true" class="pastel-profile">
 				           <i class="fi-torso"></i>
 				          	Iniciar Sesión
 				        </a>

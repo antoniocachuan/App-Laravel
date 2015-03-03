@@ -38,6 +38,10 @@ Route::resource('user', 'UserController');
 
 Route::resource('campaign', 'CampaignsController');
 
+Route::resource('activities', 'ActivitiesController');
+
+Route::resource('medals', 'MedalsController');
+
 Route::any('/profile', [
   'as'   => 'user/profile',
   'uses' => 'UserController@profile'

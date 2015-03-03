@@ -168,3 +168,15 @@ body{
 			padding: 0;
 			margin: 0;
 		}
+
+		.pastel-profile .top-bar-section li:not(.has-form) a:not(.button){
+			background-color: #AEC6CF;
+		}
+
+		.top-bar-section li:not(.has-form) a:not(.button){
+			background-color: #FF6961;
+		}
+
+		.main-bar{
+			background-color: #779ECB;
+		};

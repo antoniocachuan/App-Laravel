@@ -1,5 +1,5 @@
-{{HTML::style('css/activity.css', array('media' => 'screen')) }}
-{{HTML::script('js/activity.js')}}
+{{HTML::style('css/campaign.css', array('media' => 'screen')) }}
+{{HTML::script('js/campaign.js')}}
 <div class="large-12 small-12 columns">
     <div class="page-header text-center">
         <h1 id="timeline">{{{ $list->title }}}</h1>
@@ -10,7 +10,7 @@
             <div class="row">
               <div class="small-11 columns timeline-panel">
                 <div class="timeline-heading">
-                  <img class="img-responsive" src="http://lorempixel.com/1600/500/sports/2" />
+                  <img class="img-responsive" src="{{{ $item->url_activitie }}}" />
                   
                 </div>
                 <div class="timeline-body">
@@ -21,7 +21,10 @@
                 <div class="timeline-footer">
                     <a><i class="fa fa-thumbs-o-up"></i></a>
                     <a><i class="fa fa-share-alt"></i></a>
-                    <a class="pull-right">Ir</a>
+                    <a href="{{ URL::route('activities.show', array('id'=>$item->id)) }}">
+                        IR
+                    </a>
+                    <a href="#"class="points">{{{ $item->points }}} puntos</a>
                 </div>
               </div>
               <div class="small-1 columns timeline-badge primary">
