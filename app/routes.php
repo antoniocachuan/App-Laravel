@@ -42,6 +42,8 @@ Route::resource('activities', 'ActivitiesController');
 
 Route::resource('medals', 'MedalsController');
 
+Route::resource('medals_obtained', 'MedalsObtainedController');
+
 Route::any('/profile', [
   'as'   => 'user/profile',
   'uses' => 'UserController@profile'
@@ -58,6 +60,17 @@ Route::any("/", [
 Route::any("/login", [
  "as"   => "user/login",
  "uses" => "UserController@login"
+]);
+
+
+Route::any("/showAvatarTitle", [
+ "as"   => "user/showAvatarTitle",
+ "uses" => "UserController@showAvatarTitle"
+]);
+
+Route::any("/showLevel", [
+ "as"   => "user/showLevel",
+ "uses" => "UserController@showLevel"
 ]);
 
 Route::resource('admin/users','Admin_UsersController');
@@ -99,6 +112,17 @@ Route::get('/db', function(){
 	//$result = DB::table('user')->where('username','antonio')->first();
 	//return $result->name;
 });
+
+
+Route::post('activities/savegrade',array('as' => 'activities.savegrade', 'uses' => 'ActivitiesController@grade'));
+
+//Route::get('next', array('as' => 'activities.next', 'uses' => 'ActivitiesController@next'));
+
+Route::any('next', [
+  'as'   => 'activities.next',
+  'uses' => 'ActivitiesController@next'
+]);
+
 
 /*Route::get('/todos', function()
 {

@@ -179,4 +179,46 @@ body{
 
 		.main-bar{
 			background-color: #779ECB;
-		};
+		}
+
+		.grande{font-size:3em}
+.blockquote-box-campa{border-right:5px solid #428BCA;margin-bottom:5px}
+.blockquote-box-campa .square-campa{width:100px;min-height:50px;margin-right:22px;text-align:center!important;background-color:#428BCA;padding:30px 0}
+.blockquote-box.blockquote-primary-campa{border-color:#357EBD}
+.blockquote-box.blockquote-primary-campa .square{background-color:#428BCA;color:#FFF}
+
+.description-campaign{
+  font-size: 13px;
+  color: #428BCA;
+}
+
+.title-campaign{
+  font-size: 16px;
+  color: #428BCA;
+}
+
+.text-white{
+	color: white;
+}
+
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+.campaign-page{
+  border: 12px solid #F4F4F4;
+}
+
+
+
+

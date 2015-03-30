@@ -36,11 +36,12 @@ class UserController extends \BaseController {
 					$user->lastname = $result['name'];
 					$user->firstname = $result['name'];
           $user->name = $result['name'];
+          $user->title_level = "Principiante";
           $user->level = '1';
           $user->total_badges = 1;
           $user->total_medals = 1;
           $user->total_campains = 0;
-          $user->points = 100;
+          $user->points = 10;
           $user->url_avatar = $result['picture'];
 					$user->save();
 					$credentials = ['username' => $result['email'],'password' => $result['id']];
@@ -87,13 +88,13 @@ class UserController extends \BaseController {
 					$user->email = $result['screen_name'].'@twitter.com';
 					$user->lastname = $result['name'];
 					$user->firstname = $result['name'];
-
+          $user->title_level = "Principiante";
           $user->name = $result['name'];
           $user->level = '1';
           $user->total_badges = 1;
           $user->total_medals = 1;
           $user->total_campains = 0;
-          $user->points = 100;
+          $user->points = 10;
           $user->url_avatar = $result['profile_image_url_https'];  
 
 					$user->save();
@@ -149,13 +150,13 @@ class UserController extends \BaseController {
 					$user->email = $result['email'];
 					$user->lastname = $result['first_name'];
 					$user->firstname = $result['last_name'];
-
+          $user->title_level = "Principiante";
           $user->name = $result['first_name'].' '.$result['last_name'];
           $user->level = '1';
           $user->total_badges = 1;
           $user->total_medals = 1;
           $user->total_campains = 0;
-          $user->points = 100;
+          $user->points = 10;
           $user->url_avatar = 'http://graph.facebook.com/'.$result['id'].'/picture';  
 
 					$user->save();
@@ -293,11 +294,12 @@ class UserController extends \BaseController {
 		$user->email = Input::get('email');
 		$user->lastname = Input::get('lastname');
 		$user->firstname = Input::get('firstname');
+    $user->title_level = "Principiante";
     $user->level = '1';
     $user->total_badges = 1;
     $user->total_medals = 1;
     $user->total_campains = 0;
-    $user->points = 100;
+    $user->points = 10;
 		$user->save();
     $credentials = ['username' => Input::get('username'),'password' => Input::get('password')];
     if (Auth::attempt($credentials)) {
@@ -356,5 +358,14 @@ class UserController extends \BaseController {
 		//
 	}
 
+  public function showAvatarTitle()
+  {
+    return View::make('tables.level');
+  }
+
+  public function showLevel()
+  {
+    return View::make('tables.title');
+  }
 
 }

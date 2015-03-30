@@ -68,10 +68,10 @@
 	</div>
 	<footer>
       <div class="row">
-        <div class="large-6 columns">
-          <p>© Copyright 2014, Created by Antonio Cachuán.</p>
+        <div class="large-6 small-12 columns">
+          <p>© Copyright 2015, Created by Antonio Cachuán.</p>
         </div>
-        <div class="large-6 columns">
+        <div class="large-6 small-12 columns">
           <ul class="inline-list right">
             <li><a href="#">Acerca del Autor</a></li>
           </ul>

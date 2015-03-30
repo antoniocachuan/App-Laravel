@@ -1,0 +1,1 @@
+completar tabla de avatar

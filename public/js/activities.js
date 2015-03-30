@@ -1,3 +1,1 @@
-var fondo = document.getElementsByClassName("hero");
-           
-$(fondo).css('background-image','url({{ URL::asset($activity->url_image3 ) }}');
+$("#background-activity").css('background-image', 'url(' + source_img + ')');

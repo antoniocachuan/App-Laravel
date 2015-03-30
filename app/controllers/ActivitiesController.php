@@ -98,5 +98,75 @@ class ActivitiesController extends \BaseController {
 		//
 	}
 
+	//Guardar la calificacion actividad
+	public function grade()
+	{
+
+		$feedback = new ActivityFeedback;
+		$feedback->id_user = Input::get('idUsuario');
+		$feedback->id_activity = Input::get('idActividad');
+		$feedback->starts = Input::get('calificacion');
+		$feedback->save();
+		/*return Response::json( array(
+		'sms' => $resultado2, 
+		'variable' =>$resultado,
+		));*/
+		return View::make('activity.respuesta');//retorna vista
+	}
+
+	public function next(){
+		
+		$idActitivy = Input::get('id');
+		$idUser = Input::get('idUser');
+
+		$currentActivity = Activity::find($idActitivy);
+
+		//Add points
+		$user = User::find($idUser);
+		$user->points = $user->points + $currentActivity->points;
+  	$user->save();
+
+  	//Give Badged
+		$result = MedalsUser::where('id_usuario', '=', $user->id)
+										->where('id_medal', '=', $currentActivity->badged_id)
+										->delete();
+
+		$newMedal= new MedalsUser;
+		$newMedal->id_usuario = $user->id;
+		$newMedal->id_medal = $currentActivity->badged_id;
+		$newMedal->save();
+
+		//Send Next Activity
+		$nextActivity = Activity::find($idActitivy +1);
+		if (is_null($nextActivity)){ 
+    	return View::make('activity.final');
+		}
+
+		//Calculate Level
+		$user = User::find($idUser);
+		$actualLevel = $user->level;
+		$actualPoints = $user->points;
+		$nextLevel = Level::find($actualLevel+1);
+		$nextLevelLimit = $nextLevel->limitI;
+
+		if($actualPoints > $nextLevelLimit){
+			$user->level = $actualLevel + 1;
+			$user->title_level = $nextLevel->titleLevel;
+
+			$newMedal= new MedalsUser;
+			$newMedal->id_usuario = $user->id;
+			$newMedal->id_medal = $nextLevel->idMedal;
+			$newMedal->save();
+	
+		}
+
+		//update total_medals
+			$totalMedals = MedalsUser::where('id_usuario', '=', $user->id)
+										->count();
+			$user->total_medals = $totalMedals;
+			$user->save();
+
+		return View::make('activity.show', array('activity' => $nextActivity));
+	}
 
 }

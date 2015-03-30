@@ -39,11 +39,13 @@
   font-size: 30px;
   line-height: 26px;
 }
+
 .profile-card h4 span {
   font-size: 20px;
   color: #8b8b8b;
   display: block;
 }
+
 .profile-card img {
   border-radius: 50%;
   border: 4px solid #69708C;
@@ -196,4 +198,24 @@ transition: all 0.4s ease-in-out;
 .fix-forum{
   margin-top: 23px;
   padding-right: 6px;
+}
+
+
+#level-title {
+  background: #00ac98;
+  padding: 7px 15px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  display: inline-block;
+  -moz-box-shadow:    2px 4px 5px 0 #ccc;
+    -webkit-box-shadow: 2px 4px 5px 0 #ccc;
+    box-shadow:         2px 4px 5px 0 #ccc;
+}
+
+#level-title .white{
+  color:white;
+  font-size: 18px;
+  padding-bottom: 4px;
 }

@@ -1,3 +1,5 @@
+
+
 #timeline{
   color:blue;
 }
@@ -108,7 +110,7 @@
   right: auto;
 }
 .timeline-badge > a {
-  color: #C5C7C5 !important;
+  /*color: #C5C7C5 !important;*/
 }
 .timeline-badge a:hover {
   color: #000 !important;
@@ -276,9 +278,4 @@
   left: 28px;
 }
 
-}
-
-
-.points{
-  float: right;
 }
