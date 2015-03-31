@@ -26,7 +26,7 @@
    <div class="reveal-modal medium" id="Medal" data-reveal>
    </div>
 
-    <div class="reveal-modal medium" id="Level" data-reveal>
+    <div class="reveal-modal small" id="Level" data-reveal>
    </div>
     <div class="reveal-modal medium" id="AvatarTitle" data-reveal>
    </div>

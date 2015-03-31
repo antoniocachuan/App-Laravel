@@ -16,7 +16,7 @@
 											</div>
 											<div class="offer-content">
 												<h3 class="lead">
-													Come Rico, Come Saludable
+													Come Rico y Saludable
 												</h3>
 												<p>
 													No todo lo que brilla es oro, y no todo alimento es saludable. Ingresa y descubrelo.
@@ -73,7 +73,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="small-11 large-6 columns">
+									<div class="small-11 large-6 columns left">
 										<div class="offer offer-success">
 											<div class="shape">
 												<div class="shape-text">
@@ -88,13 +88,16 @@
 													Tu opinión es muy importante.
 													<br>
 													<a href="{{ URL::route('campaign.show', array('id'=>2)) }}" data-reveal-id="Path" data-reveal-ajax="true">
-				           					<i class="fi-star"></i>
+				           					<i class="fi-torso"></i>
 				          					Puedo lograrlo →
 				          				</a>	
 												</p>
 											</div>
 										</div>
 									</div>
+
+
+
 								</div>
 							</div>
 						</div>
