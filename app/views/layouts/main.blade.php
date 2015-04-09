@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
 	<title>@yield('title', 'Health App Game')</title>
 	{{HTML::style('css/foundation.css', array('media' => 'screen')) }}
 	{{HTML::style('css/foundation-icons.css', array('media' => 'screen'))}}
@@ -56,20 +57,17 @@
 		</nav>
 	</div>
 	</div>
-	@if(Session::has('message'))
-		<div class="alert-box success">
-			{{{Session::get('message')}}}
-		</div>
-	@endif
+	@include ('admin.errors', array('errors' => $errors))
+	@include ('user.mensaje')
 	<div class="row contenido">
-		<div class="large-12">
+		<div class="large-12 columns">
 			@yield('content')
 		</div>
 	</div>
 	<footer>
       <div class="row">
         <div class="large-6 small-12 columns">
-          <p>© Copyright 2015, Created by Antonio Cachuán.</p>
+          <p>© Copyright 2015, by Antonio Cachuán.</p>
         </div>
         <div class="large-6 small-12 columns">
           <ul class="inline-list right">

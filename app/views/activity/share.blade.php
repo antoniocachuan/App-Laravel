@@ -3,10 +3,10 @@
 
               <div class="row">
                 <div class="large-1 small-0 columns">
-                
+                <p></p>
                 </div>
                 
-                <div class="large-11 small-12 columns share-box">
+                <div class="large-10 small-12 columns share-box">
                 	<div class="row">
 	                	 <div class="large-6 small-0 columns">
 	                    	<legend class="share-title">
@@ -47,6 +47,9 @@
                                        </div>
                      </div>
                    </div>
+                </div>
+                <div class="large-1 small-0 columns">
+                <p></p>
                 </div>
               </div>
       

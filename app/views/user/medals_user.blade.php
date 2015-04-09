@@ -6,20 +6,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="campaign-content large-12 small-12 columns">
-		
-						
+				<div class="campaign-content large-12 small-12 columns">					
 						<div class="row">
 							@foreach($items as $item)
-							<div class="large-2 small-3 columns left">
+							<div class="large-2 small-3 columns left fix-padding">
 				         <a href="{{ URL::route('medals.show', array('id'=>$item->id_medal )) }}" data-reveal-id="Medal" data-reveal-ajax="true">
 		           				<img src='{{{$item->url_medal}}}' alt="medal image">
 		          		</a>
 				      </div>
-				      @endforeach
-		         </div>
-		        
-	     
+				    	 @endforeach
+		         </div>  
 			</div>
 		</div>
 	</div>

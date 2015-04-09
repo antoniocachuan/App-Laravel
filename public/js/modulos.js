@@ -18,6 +18,27 @@ function mostrarMedallasObtenidas(){
         });
 }
 
+function mostrarUltimosComentario(){
+  var parametros = {
+                "id" : user_id
+        };
+  $.ajax({
+                data:  parametros,
+                url:   'showlastcomment',
+                type:  'post',
+                beforeSend: function () {
+                        $("#lastComments").html("Cargando...");
+                },
+                success:  function (data) {
+                   //$("#resultado").html(data.sms + " - " + data.variable);
+                   //retorna vista
+                   $("#lastComments").html(data);
+                   //retorna view
+                }
+        });
+}
+
 $( document ).ready(function() {
+    mostrarUltimosComentario();
     mostrarMedallasObtenidas();
 });

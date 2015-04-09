@@ -85,10 +85,6 @@ body{
 	font-size:44px;
 }
 
-.about,.work,.contact{
-	padding:50px 0 0 0;
-}
-
 .about img{
 	width:250px;
 	height:250px;
@@ -121,3 +117,8 @@ hr{
 	opacity:0.8;}footer{padding:80px 0 10px 0;}footer a:hover{color:rgba(0,0,0,0.4);
 	background-color:transparent;
 }
+
+
+
+
+

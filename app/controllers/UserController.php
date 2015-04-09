@@ -299,6 +299,7 @@ class UserController extends \BaseController {
     $user->total_badges = 1;
     $user->total_medals = 1;
     $user->total_campains = 0;
+    $user->url_avatar = 'img/user_images/default_avatar.png';
     $user->points = 10;
 		$user->save();
     $credentials = ['username' => Input::get('username'),'password' => Input::get('password')];
@@ -331,7 +332,9 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+    $user = User::find($id);
+
+    return View::make('user.edit', array('user' => $user));
 	}
 
 
@@ -343,7 +346,27 @@ class UserController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+        $user = User::find($id);
+        
+        if (is_null ($user))
+        {
+            App::abort(404);
+        }
+        $data = Input::all();
+
+      
+            if ($user->validAndSave($data))
+            {
+                // Y Devolvemos una redirección a la acción show para mostrar el usuario
+                //return Redirect::route('admin.users.show', array($user->id));
+                return Redirect::route('user/profile')->with('message', 'Usuario actualizado con éxito =)');
+            }
+            else{
+                //return Redirect::route('user/profile')->withErrors($user->errors);
+                return Redirect::back()->withErrors($user->errors);
+            }
+
+      
 	}
 
 

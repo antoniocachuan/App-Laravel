@@ -116,6 +116,12 @@ Route::get('/db', function(){
 
 Route::post('activities/savegrade',array('as' => 'activities.savegrade', 'uses' => 'ActivitiesController@grade'));
 
+Route::post('activities/savecomment',array('as' => 'activities.savecomment', 'uses' => 'ActivitiesController@comment'));
+
+Route::post('activities/showcomment',array('as' => 'activities.showcomment', 'uses' => 'ActivitiesController@showcomment'));
+
+Route::post('showlastcomment',array('as' => 'activities.showlastcomment', 'uses' => 'ActivitiesController@showlastcomment'));
+
 //Route::get('next', array('as' => 'activities.next', 'uses' => 'ActivitiesController@next'));
 
 Route::any('next', [

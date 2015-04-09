@@ -1,3 +1,12 @@
+<div class="jumbotron jumbotron-sm">       
+  <div class="row">
+      <div class="large-12 small-12 columns">
+          <h1 class="h1">
+              Status
+          </h1>
+      </div>
+  </div>
+</div>
 <div class="pricing-table row">
         <div class="plan small-12 large-4 colums left">
           <div class="plan-name-bronze">

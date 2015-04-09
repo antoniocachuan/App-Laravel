@@ -206,8 +206,36 @@ background: #358CCE;
 color: #FFF;
 border-radius: 0px;
 }
-.jumbotron-sm { padding-top: 24px;
-padding-bottom: 24px; }
+
+.jumbotron-red {
+background: #F63E28;
+color: #FFF;
+border-radius: 0px;
+}
+
+.jumbotron-yellow {
+background: #E4882D;
+color: #FFF;
+border-radius: 0px;
+}
+
+
+.jumbotron-green {
+background: #5CBE4A;
+color: #FFF;
+border-radius: 0px;
+}
+
+.jumbotron-lightblue {
+background: #2DAAE1;
+color: #FFF;
+border-radius: 0px;
+}
+
+.jumbotron-sm { 
+padding-top: 24px;
+padding-bottom: 24px; 
+}
 .jumbotron small {
 color: #FFF;
 }
@@ -219,6 +247,8 @@ font-size: 24px;
   border: 12px solid #F4F4F4;
 }
 
-
+.margin-article{
+	margin: 20px;
+}
 
 

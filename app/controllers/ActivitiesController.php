@@ -114,6 +114,62 @@ class ActivitiesController extends \BaseController {
 		return View::make('activity.respuesta');//retorna vista
 	}
 
+	public function comment()
+	{
+
+		$comment = new Comment;
+		$comment->id_user = Input::get('idUsuario');
+		$comment->id_activity = Input::get('idActividad');
+		$comment->comment = Input::get('comment');
+		$comment->save();
+		/*return Response::json( array(
+		'sms' => $resultado2, 
+		'variable' =>$resultado,
+		));*/
+		return View::make('activity.respuesta');//retorna vista
+	}
+
+	public function showcomment()
+	{
+
+		$idActividad= Input::get('idActividad');
+
+	
+
+		$results = DB::table('activity_comments')
+				->where('activity_comments.id_activity','=',$idActividad)
+        ->leftJoin('user', 'user.id', '=', 'activity_comments.id_user')
+        ->get();
+
+   	$cantidad = Comment::where('id_activity', '=', $idActividad)
+								->count();
+		/*return Response::json( array(
+		'sms' => $resultado2, 
+		'variable' =>$resultado,
+		));*/
+		return View::make('activity.showComment', array('results' => $results, 'cantidad'=> $cantidad));//retorna vista
+
+	}
+
+	public function showlastcomment()
+	{
+
+		$idUser= Input::get('id');
+
+		$results = DB::table('activity_comments')
+		    ->orderBy('activity_comments.updated_at', 'desc')
+        ->leftJoin('user', 'user.id', '=', 'activity_comments.id_user')
+        ->take(4)
+        ->get();
+
+		/*return Response::json( array(
+		'sms' => $resultado2, 
+		'variable' =>$resultado,
+		));*/
+		return View::make('user.foro', array('results' => $results));//retorna vista
+
+	}
+
 	public function next(){
 		
 		$idActitivy = Input::get('id');

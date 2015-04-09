@@ -13,9 +13,13 @@
 				               <h4 id="level-title"> <i class="fa fa-shield white"></i>{{ Auth::user()->title_level }}</h4>
 				               </a>
 				               <p><i class="fi-torso"></i>{{ Auth::user()->username }}</p>
-				               <p><i class="fi-mail"></i><span> {{ Auth::user()->email }}</span></p>
+				               <p><i class="fi-mail"></i>{{ Auth::user()->email }}</p>
 				               <p><i class="fi-web"></i>Lima, Perú</p>
-				               <p><i class="fi-social-thumb-up"></i>Perfil Completado al 100%</p>
+				               <p>
+					               <a href="{{ URL::route('user.edit', array('idUser'=>Auth::user()->id)) }}" data-reveal-id="UserEdit" data-reveal-ajax="true">
+					               <i class="fa fa-pencil"></i>Actualizar Perfil
+					               </a>	
+				               </p>
 				            </div>
 				            <div class="row collapse">
 				               <ul class="button-group even-3">

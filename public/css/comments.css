@@ -1,0 +1,15 @@
+.bordes{
+  border: 15px solid lightsteelblue;
+}
+
+.bordes-blue{
+  border: 15px solid lightblue;
+}
+
+.user_name{
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media{
+    border-bottom: 1px dotted #ccc;
+}

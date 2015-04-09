@@ -1,4 +1,25 @@
+.color-user-comment{
+  color:lightsalmon;
+}
 
+.color-comment{
+  color:lightslategray;
+}
+
+.borde-comment-box{
+  border-right: 14px solid lightcoral;
+}
+
+.level-comment{
+  background: #EEA12C;
+  padding: 6px 5px;
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-block;
+  -moz-box-shadow: 2px 4px 5px 0 #ccc;
+  -webkit-box-shadow: 2px 4px 5px 0 #ccc;
+  box-shadow: 2px 4px 5px 0 #ccc;
+}
 
 .bump {
   margin-top: 50px;
@@ -359,4 +380,16 @@ transition: all 0.4s ease-in-out;
 .btn-plan-select {
   padding: 8px 25px;
   font-size: 18px;
+}
+
+.bordes{
+  border: 15px solid lightsteelblue;
+}
+
+.sin-bordes{
+  margin-bottom: 0 !important;
+}
+
+.fix-padding{
+  padding-bottom: 1px;
 }

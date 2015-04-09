@@ -87,7 +87,7 @@
 												<p>
 													Tu opinión es muy importante.
 													<br>
-													<a href="{{ URL::route('campaign.show', array('id'=>2)) }}" data-reveal-id="Path" data-reveal-ajax="true">
+													<a href="{{ URL::route('campaign.show', array('id'=>4)) }}" data-reveal-id="Path" data-reveal-ajax="true">
 				           					<i class="fi-torso"></i>
 				          					Puedo lograrlo →
 				          				</a>	
